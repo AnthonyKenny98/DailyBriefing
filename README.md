@@ -1,6 +1,6 @@
-# PythonTemplate &middot; [![Known Vulnerabilities](https://snyk.io/test/github/AnthonyKenny98/PythonTemplate/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/AnthonyKenny98/PythonTemplate?targetFile=requirements.txt) [![Build Status](https://travis-ci.org/AnthonyKenny98/PythonTemplate.svg?branch=master)](https://travis-ci.org/AnthonyKenny98/PythonTemplate) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+# DailyBriefing &middot; [![Known Vulnerabilities](https://snyk.io/test/github/AnthonyKenny98/DailyBriefing/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/AnthonyKenny98/DailyBriefing?targetFile=requirements.txt) [![Build Status](https://travis-ci.org/AnthonyKenny98/DailyBriefing.svg?branch=master)](https://travis-ci.org/AnthonyKenny98/DailyBriefing) ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
-{{ProjectDescription}}
+
 
 ## Table of Contents
 + [License](#license)
@@ -10,8 +10,8 @@
 
 ### Checkout the Code 
   ```
-  $ git clone git@github.com:AnthonyKenny98/PythonTemplate.git
-  $ cd PythonTemplate
+  $ git clone git@github.com:AnthonyKenny98/DailyBriefing.git
+  $ cd DailyBriefing
   ```
 ### Create and Init Virtual Environment
   ```
