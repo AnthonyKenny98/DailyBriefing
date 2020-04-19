@@ -3,16 +3,18 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 11:46:58
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-19 21:02:21
+# @Last Modified time: 2020-04-19 21:42:45
 
 import requests
+import os
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 COORDINATES = {
     'sydney': {'lat': -33.87, 'long': 151.21},
     'canyonleigh': {'lat': -34.54, 'long': 150.13}
 }
 
-API_KEY = 'api.credentials'
+API_KEY = dir_path + '/api.credentials'
 BASE_URL = 'https://api.openweathermap.org/data/2.5/onecall?'
 UNITS = 'metric'
 
@@ -47,7 +49,7 @@ class Weather:
             'max_temp': today['temp']['max'],
             # First item in list of weather descriptions
             # [TODO? Account for rest of list?]
-            'weather': today['weather'][0]['description'],
+            'description': today['weather'][0]['description'],
             'icon_url': 'http://openweathermap.org/img/wn/{}@2x.png'.format(
                 today['weather'][0]['icon'])
         }
