@@ -3,11 +3,20 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-19 21:41:24
+# @Last Modified time: 2020-04-21 09:08:35
 
 from mail import send_mail
-from weather import Weather
+from weather import WeatherToday
 from datetime import datetime
+
+
+class Briefing:
+    """Holds the entire briefing."""
+
+    def __init__(self):
+        """Initialize briefing."""
+        self.weather = WeatherToday('canyonleigh')
+
 
 text = """\
     Hi,
@@ -15,13 +24,12 @@ text = """\
     Real Python has many great tutorials:
     www.realpython.com"""
 
-w = Weather('canyonleigh')
-weather = w.today()
+briefing = Briefing()
 
 data = {
     'subject': datetime.now().strftime("%H:%M:%S"),
     'text': text,
-    'weather': weather
+    'briefing': briefing
 }
 
 send_mail(data)

@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 11:46:58
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-19 21:42:45
+# @Last Modified time: 2020-04-21 09:01:38
 
 import requests
 import os
@@ -16,6 +16,7 @@ COORDINATES = {
 
 API_KEY = dir_path + '/api.credentials'
 BASE_URL = 'https://api.openweathermap.org/data/2.5/onecall?'
+ICON_URL = 'http://openweathermap.org/img/wn/{}@2x.png'
 UNITS = 'metric'
 
 
@@ -26,36 +27,29 @@ class Weather:
         """Initialize Function."""
         with open(API_KEY) as f:
             self.api_key = f.read()
-
         self.coordinates = COORDINATES[city]
 
-    def __get(self):
+    def get(self):
         params = {
             'lat': self.coordinates['lat'],
             'lon': self.coordinates['long'],
             'appid': self.api_key,
             'units': UNITS
         }
-        r = requests.get(BASE_URL, params=params)
-        return r.json()
-
-    def today(self):
-        """Return Today's Forecast."""
-        r = self.__get()
-        # First item in 7 day forecast list
-        today = r['daily'][0]
-        return {
-            'min_temp': today['temp']['min'],
-            'max_temp': today['temp']['max'],
-            # First item in list of weather descriptions
-            # [TODO? Account for rest of list?]
-            'description': today['weather'][0]['description'],
-            'icon_url': 'http://openweathermap.org/img/wn/{}@2x.png'.format(
-                today['weather'][0]['icon'])
-        }
+        return requests.get(BASE_URL, params=params).json()
 
 
-# For Development --> needs deleting
-if __name__ == '__main__':
-    w = Weather('canyonleigh')
-    print(w.today())
+class WeatherToday(Weather):
+    """Today's Weather."""
+
+    def __init__(self, city):
+        """Initialize today's forecast."""
+        super().__init__(city)
+
+        today = self.get()['daily'][0]
+        self.min_temp = today['temp']['min']
+        self.max_temp = today['temp']['max']
+        # First item in list of weather descriptions
+        # [TODO? Account for rest of list?]
+        self.description = today['weather'][0]['description']
+        self.icon_url = ICON_URL.format(today['weather'][0]['icon'])
