@@ -3,40 +3,29 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 11:46:58
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 14:44:07
+# @Last Modified time: 2020-04-21 16:10:23
 
-import requests
-import os
-dir_path = os.path.dirname(os.path.realpath(__file__))
+from api import API
 
 COORDINATES = {
     'sydney': {'lat': -33.87, 'long': 151.21},
     'canyonleigh': {'lat': -34.54, 'long': 150.13}
 }
 
-API_KEY = dir_path + '/api.credentials'
-BASE_URL = 'https://api.openweathermap.org/data/2.5/onecall?'
 ICON_URL = 'http://openweathermap.org/img/wn/{}@2x.png'
 UNITS = 'metric'
 
 
-class Weather:
+class Weather(API):
     """Weather Class."""
+
+    # Redefine Class Attributes
+    BASE_URL = 'https://api.openweathermap.org/data/2.5/onecall?'
 
     def __init__(self, city):
         """Initialize Function."""
-        with open(API_KEY) as f:
-            self.api_key = f.read()
+        super().__init__()
         self.coordinates = COORDINATES[city]
-
-    def get(self):
-        params = {
-            'lat': self.coordinates['lat'],
-            'lon': self.coordinates['long'],
-            'appid': self.api_key,
-            'units': UNITS
-        }
-        return requests.get(BASE_URL, params=params).json()
 
 
 class WeatherToday(Weather):
@@ -45,7 +34,13 @@ class WeatherToday(Weather):
     def __init__(self, city):
         """Initialize today's forecast."""
         super().__init__(city)
-        r = self.get()
+        params = {
+            'lat': self.coordinates['lat'],
+            'lon': self.coordinates['long'],
+            'appid': self.api_key,
+            'units': UNITS
+        }
+        r = self.get(params)
         today = r['daily'][0]
         self.temp = int(r['current']['temp'])
         self.min_temp = today['temp']['min']

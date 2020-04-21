@@ -127,13 +127,11 @@
         clear: both;
       }
 
-      .col {
-        vertical-align: top;
-        display: table-cell;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        /*width: 50%;*/
-      }
+      .col { 
+          display: block ;
+          width: 100%;
+          text-align: center ;
+        }
 
       /* -------------------------------------
           TYPOGRAPHY
@@ -157,7 +155,8 @@
         font-size: 40px;
         font-weight: 300;
         text-align: left;
-        text-transform: capitalize; 
+        text-transform: capitalize;
+        text-align: center ;
       }
 
       p {
@@ -288,53 +287,16 @@
       /* -------------------------------------
           RESPONSIVE AND MOBILE FRIENDLY STYLES
       ------------------------------------- */
-      @media only screen and (max-width:620px) {
-        table[class=body] h1 {
-          font-size: 28px !important;
-          margin-bottom: 10px !important; 
-        }
-        table[class=body] p,
-        table[class=body] ul,
-        table[class=body] ol,
-        table[class=body] td,
-        table[class=body] span,
-        table[class=body] a {
-          font-size: 16px !important; 
-        }
-        table[class=body] .wrapper,
-        table[class=body] .article {
-          padding: 10px !important; 
-        }
-        table[class=body] .content {
-          padding: 0 !important; 
-        }
-        table[class=body] .container {
-          padding: 0 !important;
-          width: 100% !important; 
-        }
-        table[class=body] .main {
-          border-left-width: 0 !important;
-          border-radius: 0 !important;
-          border-right-width: 0 !important; 
-        }
-        table[class=body] .btn table {
-          width: 100% !important; 
-        }
-        table[class=body] .btn a {
-          width: 100% !important; 
-        }
-        table[class=body] .img-responsive {
-          height: auto !important;
-          max-width: 100% !important;
-          width: auto !important; 
-        }
-        table[class=body] .col { 
-          display: block !important;
-          width: 100% !important;
-          text-align: center !important;
+      @media only screen and (min-width:620px) {
+        .col {
+          text-align: left !important;
+          vertical-align: top !important;
+          display: table-cell !important;
+          padding-bottom: 5px !important;
+          padding-top: 5px !important;
         }
         h1 {
-          text-align: center !important;
+          text-align: left !important;
         }
       }
 

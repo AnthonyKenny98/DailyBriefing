@@ -3,10 +3,10 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 14:32:37
+# @Last Modified time: 2020-04-21 14:56:26
 
-# import smtplib
-# import ssl
+import smtplib
+import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
@@ -43,8 +43,8 @@ def send_mail(data):
         sender_email = g.read()
 
     # Get Gmail Password
-    # with open(PASS, 'r') as p:
-        # password = p.read()
+    with open(PASS, 'r') as p:
+        password = p.read()
 
     # Create MIME multipart message
     message = MIMEMultipart('alternative')
@@ -59,7 +59,6 @@ def send_mail(data):
     html = render_template(dir_path + '/mail.html', briefing=data['briefing'])
     # Transform html from css to inline styling (needed for emails)
     html = transform(html, strip_important=False)
-    # html = pynliner.fromString(html)
 
     # DEVELOPMENT - write to html file
     with open(dir_path + '/../mailout.html', 'w') as f:
@@ -74,7 +73,7 @@ def send_mail(data):
     message.attach(part2)
 
     # Uncomment to send email
-    # context = ssl.create_default_context()
-    # with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
-    #     server.login(sender_email, password)
-    #     server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
+        server.login(sender_email, password)
+        # server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())

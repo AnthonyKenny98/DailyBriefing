@@ -3,11 +3,12 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 11:55:03
+# @Last Modified time: 2020-04-21 16:22:01
 
 from mail import send_mail
 from weather import WeatherToday
 from datetime import datetime
+from news import NewsToday
 
 
 class Date():
@@ -30,6 +31,7 @@ class Briefing:
         self.user = 'Anthony Kenny'
         self.date = Date()
         self.weather = WeatherToday('canyonleigh')
+        self.news = NewsToday()
 
 
 text = """\
@@ -45,5 +47,6 @@ data = {
     'text': text,
     'briefing': briefing
 }
+
 
 send_mail(data)
