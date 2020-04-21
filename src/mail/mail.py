@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 09:14:31
+# @Last Modified time: 2020-04-21 13:59:25
 
 import smtplib
 import ssl
@@ -13,6 +13,7 @@ import os
 import sys
 import jinja2
 from premailer import transform
+import pynliner
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 PORT = 465
@@ -58,7 +59,8 @@ def send_mail(data):
     # Use Jinga to render template with variables
     html = render_template(dir_path + '/mail.html', briefing=data['briefing'])
     # Transform html from css to inline styling (needed for emails)
-    html = transform(html)
+    html = transform(html, strip_important=False)
+    # html = pynliner.fromString(html)
 
     # DEVELOPMENT - write to html file 
     with open(dir_path + '/../mailout.html', 'w') as f:
@@ -73,7 +75,7 @@ def send_mail(data):
     message.attach(part2)
 
     # Uncomment to send email
-    # context = ssl.create_default_context()
+    context = ssl.create_default_context()
     # with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
     #     server.login(sender_email, password)
     #     server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())
