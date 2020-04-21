@@ -3,11 +3,22 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 09:08:35
+# @Last Modified time: 2020-04-21 10:14:15
 
 from mail import send_mail
 from weather import WeatherToday
 from datetime import datetime
+
+
+class Date():
+    """Date."""
+
+    def __init__(self):
+        """Init date."""
+        dt = datetime.now()
+        self.dayname = dt.strftime('%A')
+        self.day = dt.strftime('%d')
+        self.month = dt.strftime('%B')
 
 
 class Briefing:
@@ -15,6 +26,8 @@ class Briefing:
 
     def __init__(self):
         """Initialize briefing."""
+        self.user = 'Anthony Kenny'
+        self.date = Date()
         self.weather = WeatherToday('canyonleigh')
 
 

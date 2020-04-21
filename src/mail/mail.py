@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 09:08:17
+# @Last Modified time: 2020-04-21 09:14:31
 
 import smtplib
 import ssl
@@ -12,6 +12,7 @@ from email.mime.multipart import MIMEMultipart
 import os
 import sys
 import jinja2
+from premailer import transform
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 PORT = 465
@@ -45,18 +46,25 @@ def send_mail(data):
     with open(PASS, 'r') as p:
         password = p.read()
 
+    # Create MIME multipart message
     message = MIMEMultipart('alternative')
     message["From"] = sender_email
     message["To"] = RECEIVER_EMAIL
-
     message['subject'] = data['subject']
 
-    # Turn these into plain/html MIMEText objects
+    # Create first part, plaintext email
     part1 = MIMEText(data['text'], "plain")
 
+    # Use Jinga to render template with variables
     html = render_template(dir_path + '/mail.html', briefing=data['briefing'])
+    # Transform html from css to inline styling (needed for emails)
+    html = transform(html)
+
+    # DEVELOPMENT - write to html file 
     with open(dir_path + '/../mailout.html', 'w') as f:
         f.write(html)
+
+    # Create second part, html
     part2 = MIMEText(html, "html")
 
     # Add HTML/plain-text parts to MIMEMultipart message
