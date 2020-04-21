@@ -13,8 +13,11 @@
       
       img {
         border: none;
+        margin: 0 ;
         -ms-interpolation-mode: bicubic;
         max-width: 100%; 
+        vertical-align: middle;
+        height: 2em;
       }
 
       body {
@@ -113,26 +116,33 @@
           SECTION STYLES
       ------------------------------------- */
 
-      .column2 {
-        float: left;
-        width: 50%;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        background-color: #999999; /* For Development only */
+      .col-container {
+        display: table;
+        width: 100%;
       }
 
-      /* Clear floats after the columns */
-      .row:after {
+      .col-container:after {
         content: "";
         display: table;
         clear: both;
+      }
+
+      .col {
+        vertical-align: top;
+        display: table-cell;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        width: 50%;
       }
 
       /* -------------------------------------
           TYPOGRAPHY
       ------------------------------------- */
       h1,
-      h2,
+      h2 {
+        margin: 0;
+        text-decoration: underline;
+      },
       h3,
       h4 {
         color: #000000;
@@ -144,13 +154,15 @@
       }
 
       h1 {
-        font-size: 35px;
+        font-size: 40px;
         font-weight: 300;
-        text-align: center;
+        text-align: left;
         text-transform: capitalize; 
       }
 
-      p,
+      p {
+        margin: 0;
+      },
       ul,
       ol {
         font-family: sans-serif;
@@ -314,6 +326,10 @@
           max-width: 100% !important;
           width: auto !important; 
         }
+        .col { 
+          display: block;
+          width: 100%;
+        }
       }
 
       /* -------------------------------------
@@ -374,9 +390,21 @@
 
         <!-- Top Banner -->
           <section class="content-block">
-            <section class="row">
-              <section class="column2">{{briefing.date.dayname}}</section>
-              <section class="column2"><img src={{briefing.weather.icon_url}}></section>
+            <section class="col-container">
+
+              <!-- Date Column -->
+              <section class="col">
+                <p><h1>{{briefing.date.dayname}}</h1></p>
+                <p>{{briefing.date.month}} {{briefing.date.day}}, {{briefing.date.year}}</p>
+              </section>
+
+              <!-- Weather Column -->
+              <section class="col">
+                    <p style="font-size:50px">{{briefing.weather.temp}}&#176;C
+                    <img src={{briefing.weather.icon_url}}></p>
+                <p><b>Today's forecast:</b> {{briefing.weather.description}}</p>
+                <p><b>min:</b> {{briefing.weather.min_temp}}&#176;C  <b>max:</b> {{briefing.weather.max_temp}}&#176;C</p>
+              </section>
             </section>
           </section>
 

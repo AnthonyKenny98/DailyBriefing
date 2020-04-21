@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Daily Briefing</title>
-    <style>.row:after {content:"";display:table;clear:both}
+    <style>.col-container:after {content:"";display:table;clear:both}
 @media only screen and (max-width: 620px) {
     table[class=body] h1 {
         font-size: 28px;
@@ -37,6 +37,10 @@
         height: auto;
         max-width: 100%;
         width: auto
+        }
+    .col {
+        display: block;
+        width: 100%
         }
     }
 @media all {
@@ -87,9 +91,21 @@
 
         <!-- Top Banner -->
           <section class="content-block" style="padding-bottom:10px; padding-top:10px">
-            <section class="row">
-              <section class="column2" style="background-color:#999; float:left; padding-bottom:10px; padding-top:10px; width:50%" bgcolor="#999999" width="50%">Tuesday</section>
-              <section class="column2" style="background-color:#999; float:left; padding-bottom:10px; padding-top:10px; width:50%" bgcolor="#999999" width="50%"><img src="http://openweathermap.org/img/wn/01d@2x.png" style="-ms-interpolation-mode:bicubic; border:none; max-width:100%"></section>
+            <section class="col-container" style="display:table; width:100%" width="100%">
+
+              <!-- Date Column -->
+              <section class="col" style="display:table-cell; padding-bottom:5px; padding-top:5px; vertical-align:top; width:50%" valign="top" width="50%">
+                <p style="margin:0"></p><h1 style="margin:0; text-decoration:underline; font-size:40px; font-weight:300; text-align:left; text-transform:capitalize" align="left">Tuesday</h1>
+                <p style="margin:0">April 21, 2020</p>
+              </section>
+
+              <!-- Weather Column -->
+              <section class="col" style="display:table-cell; padding-bottom:5px; padding-top:5px; vertical-align:top; width:50%" valign="top" width="50%">
+                    <p style="margin:0; font-size:50px">22°C
+                    <img src="http://openweathermap.org/img/wn/01d@2x.png" style="-ms-interpolation-mode:bicubic; border:none; height:2em; margin:0; max-width:100%; vertical-align:middle" height="2em" valign="middle"></p>
+                <p style="margin:0"><b>Today's forecast:</b> clear sky</p>
+                <p style="margin:0"><b>min:</b> 10.92°C  <b>max:</b> 22.45°C</p>
+              </section>
             </section>
           </section>
 

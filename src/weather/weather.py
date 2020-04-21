@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 11:46:58
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 09:01:38
+# @Last Modified time: 2020-04-21 12:43:56
 
 import requests
 import os
@@ -45,8 +45,9 @@ class WeatherToday(Weather):
     def __init__(self, city):
         """Initialize today's forecast."""
         super().__init__(city)
-
-        today = self.get()['daily'][0]
+        r = self.get()
+        today = r['daily'][0]
+        self.temp = int(r['current']['temp'])
         self.min_temp = today['temp']['min']
         self.max_temp = today['temp']['max']
         # First item in list of weather descriptions

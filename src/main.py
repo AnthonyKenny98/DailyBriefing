@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 10:14:15
+# @Last Modified time: 2020-04-21 11:55:03
 
 from mail import send_mail
 from weather import WeatherToday
@@ -19,6 +19,7 @@ class Date():
         self.dayname = dt.strftime('%A')
         self.day = dt.strftime('%d')
         self.month = dt.strftime('%B')
+        self.year = dt.strftime('%Y')
 
 
 class Briefing:
