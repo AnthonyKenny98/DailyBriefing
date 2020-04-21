@@ -3,17 +3,16 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 13:59:25
+# @Last Modified time: 2020-04-21 14:32:37
 
-import smtplib
-import ssl
+# import smtplib
+# import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
 import sys
 import jinja2
 from premailer import transform
-import pynliner
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 PORT = 465
@@ -44,8 +43,8 @@ def send_mail(data):
         sender_email = g.read()
 
     # Get Gmail Password
-    with open(PASS, 'r') as p:
-        password = p.read()
+    # with open(PASS, 'r') as p:
+        # password = p.read()
 
     # Create MIME multipart message
     message = MIMEMultipart('alternative')
@@ -62,7 +61,7 @@ def send_mail(data):
     html = transform(html, strip_important=False)
     # html = pynliner.fromString(html)
 
-    # DEVELOPMENT - write to html file 
+    # DEVELOPMENT - write to html file
     with open(dir_path + '/../mailout.html', 'w') as f:
         f.write(html)
 
@@ -75,7 +74,7 @@ def send_mail(data):
     message.attach(part2)
 
     # Uncomment to send email
-    context = ssl.create_default_context()
+    # context = ssl.create_default_context()
     # with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
     #     server.login(sender_email, password)
     #     server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())
