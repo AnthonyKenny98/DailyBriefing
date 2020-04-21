@@ -10,9 +10,19 @@
         vertical-align: top !important;
         display: table-cell !important;
         padding-bottom: 5px !important;
-        padding-top: 5px !important
+        padding-top: 5px !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important
+        }
+    .article_full {
+        text-align: left !important;
+        vertical-align: top !important;
+        display: table-cell !important
         }
     h1 {
+        text-align: left !important
+        }
+    h2 {
         text-align: left !important
         }
     }
@@ -60,31 +70,159 @@
     <div class="content" style="box-sizing:border-box; display:block; margin:0 auto; max-width:580px; padding:10px">
       <!-- START CENTERED WHITE CONTAINER -->
       <section class="main" style="background:#fff; border-radius:3px; width:100%" width="100%">
-        <section class="wrapper" style="box-sizing:border-box; padding:20px">
+        <section class="wrapper" style="box-sizing:border-box; padding:10px">
 
         <!-- Top Banner -->
           <section class="content-block" style="padding-bottom:10px; padding-top:10px">
-            <section class="col-container" style="display:table; width:100%" width="100%">
+            <section class="col-container" style="display:table; margin-top:10px; table-layout:fixed; width:100%" width="100%">
 
               <!-- Date Column -->
-              <section class="col" style="display:block; text-align:center; width:100%" align="center" width="100%">
-                <p style="margin:0"></p><h1 style="margin:0; text-decoration:underline; font-size:40px; font-weight:300; text-align:center; text-transform:capitalize" align="center">Tuesday</h1>
+              <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                <p style="margin:0"></p><h1 style="margin:0; text-align:center; text-decoration:underline; font-size:40px; font-weight:300; text-transform:capitalize" align="center">Tuesday</h1>
                 <p style="margin:0">April 21, 2020</p>
               </section>
 
               <!-- Weather Column -->
-              <section class="col" style="display:block; text-align:center; width:100%" align="center" width="100%">
-                    <p style="margin:0; font-size:50px">22°C
-                    <img src="http://openweathermap.org/img/wn/02d@2x.png" style="border:none; height:2em; margin:0; max-width:100%; vertical-align:middle" height="2em" valign="middle"></p>
-                <p style="margin:0"><b>Today's forecast:</b> few clouds</p>
-                <p style="margin:0"><b>min:</b> 11.81°C  <b>max:</b> 22.19°C</p>
+              <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                <table role="presentation" style="border-collapse:separate; width:100%" width="100%">
+                  <tr>
+                    <td style="font-family:sans-serif; font-size:14px; vertical-align:top" valign="top">
+                      <p class="align-center" style="margin:0; text-align:center; float:left; font-size:50px; white-space:nowrap" align="center"> 
+                        19°C
+                        <img src="http://openweathermap.org/img/wn/03d@2x.png" style="border:none; margin:10px; max-width:100%; vertical-align:middle; height:2em" valign="middle" height="2em">
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-family:sans-serif; font-size:14px; vertical-align:top" valign="top">
+                      <p style="margin:0">
+                        <b>Today's forecast:</b> scattered clouds
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="font-family:sans-serif; font-size:14px; vertical-align:top" valign="top">
+                      <p style="margin:0">
+                        <b>min:</b> 10.67°C  <b>max: </b>19.05°C
+                      </p>
+                    </td>
+                  </tr>
+                </table>
               </section>
             </section>
           </section>
 
-        <!-- Next section -->
+        <!-- News Headlines -->
           <section class="content-block" style="padding-bottom:10px; padding-top:10px">
-            Hello there
+            <h2 style="margin:0; text-align:center; text-decoration:underline" align="center"> Today's Headlines </h2>
+
+            <!-- AFR Headlines -->
+            <section class="content-block" style="padding-bottom:10px; padding-top:10px">
+              <h3>Australian Financial Review</h3>
+                
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">Virgin left sitting on the tarmac</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.7936%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_0%2C%24y_140/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/9a2d72727600a9955c7420a6d2e667bd8a8769c5" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">RBA governor Philip Lowe Q&amp;A</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.2326%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_0%2C%24y_0/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/4469f7816bbdfbdf838c948d01747ad861943f00" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">Why Australians must take up the contact app challenge</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.1988%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_0%2C%24y_53/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/a9808cf8ba8e0f816a4b7ee9243fc106712f5eaa" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">Biggest economic contraction since 1930s: RBA</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.3369%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_0%2C%24y_42/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/c9fb5f78d1b61adc401b4a4f304e4a00ac3329e6" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">Turning point reached in virus battle: PM</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.3295%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_70%2C%24y_0/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/293196162f954749fd9d5f0ee1f1400f325a53eb" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">Rental markets 'in a lot of trouble'</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.5298%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_0%2C%24y_109/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/f68483a9317c444a0f7baef49783cffc8c5985d9" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">Australia’s success implies we've over-stimulated</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.8319%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_57%2C%24y_844/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/bd079f488ed869706cade37e4efa5c17049d7104" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">RBA says banks are strong enough to pay dividends</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_1.4537%2C%24multiply_0.7554%2C%24ratio_1.776846%2C%24width_1059%2C%24x_0%2C%24y_0/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/2bdba8a5c6478662b70c40dd8e1be3cc42fff729" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">Australia's virus cases rise 0.17pc; Global cases beyond 2.4 million</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.5298%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_0%2C%24y_0/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/f226327a47f3046a8222b38db042656a611bb9b4" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+                <section class="col-container article" style="display:table; margin-top:10px; table-layout:fixed; width:100%; border-style:solid; border-width:1px" width="100%">
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <a class="article_title" style="color:black; text-decoration:none; font-size:20px">ASX to fall; Oil tumbles into negative territory</a>
+                  </section>
+                  <section class="col" style="display:block; margin-left:5px; margin-right:5px; text-align:center; vertical-align:bottom; width:100%" align="center" valign="bottom" width="100%">
+                    <img class="wrapper align-left" src="https://static.ffx.io/images/%24zoom_0.9934%2C%24multiply_0.7554%2C%24ratio_1.777778%2C%24width_1059%2C%24x_0%2C%24y_0/t_crop_custom/e_sharpen:25%2Cq_85%2Cf_auto/f8d3be857c9d1766b1d093c8d42f5213046e46c6" style="border:none; margin:10px; max-width:100%; vertical-align:middle; box-sizing:border-box; padding:10px; text-align:left" valign="middle" align="left">
+                  </section>
+                </section>
+                
+            </section>
+
+            <!-- Australian Headlines -->
+            <section class="content-block" style="padding-bottom:10px; padding-top:10px">
+              <h3>Australian News</h3>
+            </section>
+
+            <!-- International Headlines -->
+            <section class="content-block" style="padding-bottom:10px; padding-top:10px">
+              <h3>International News</h3>
+            </section>
+
           </section>
 
         </section>
