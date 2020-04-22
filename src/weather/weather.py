@@ -41,6 +41,7 @@ class WeatherToday(Weather):
             'units': UNITS
         }
         r = self.get(params)
+        print(self.api_key)
         today = r['daily'][0]
         self.temp = int(r['current']['temp'])
         self.min_temp = today['temp']['min']

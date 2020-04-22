@@ -21,7 +21,7 @@ class API:
     def __init__(self):
         """Super Init."""
         with open(self.dir_path() + API_KEY) as f:
-            self.api_key = f.read()
+            self.api_key = f.read().rstrip()
 
     def dir_path(self):
         path = sys.modules[self.__module__].__file__
@@ -29,3 +29,4 @@ class API:
 
     def get(self, params):
         return requests.get(self.BASE_URL, params=params).json()
+        
