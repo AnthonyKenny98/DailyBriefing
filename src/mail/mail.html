@@ -435,7 +435,8 @@
                 {% for article in briefing.news.afr %}
                 <section class="col-container article">
                   <section class="col" >
-                    <a class="article_title">{{article.title}}</a>
+                    <a class="article_title" href="{{article.url}}">{{article.title}}</a>
+                    <br><p>{{article.description}}</p>
                   </section>
                   <section class="col">
                     <img class="wrapper align-left" src={{article.img_url}}>
@@ -466,7 +467,8 @@
     <table role="presentation" border="0" cellpadding="0" cellspacing="0">
       <tr>
         <td class="content-block">
-          <span class="apple-link">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
+          <span class="apple-link">Briefing sent at {{briefing.date.time}} </span>
+          <br><span class="apple-link">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
           <br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.
         </td>
       </tr>
