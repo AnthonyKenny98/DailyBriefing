@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:03:22
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 16:18:07
+# @Last Modified time: 2020-04-24 18:52:12
 
 
 from api import API
@@ -30,12 +30,14 @@ class NewsToday(News):
             'apiKey': self.api_key,
             'language': 'en'
         }
-        self.intl = [Article(a) for a in self.get(params)['articles']]
-        params['country'] = 'au'
-        self.aus = [Article(a) for a in self.get(params)['articles']]
-        params.pop('country')
+        # self.intl = [Article(a) for a in self.get(params)['articles']]
+        # params['country'] = 'au'
+        # self.aus = [Article(a) for a in self.get(params)['articles']]
+        # params.pop('country')
         params['sources'] = 'australian-financial-review'
         self.afr = [Article(a) for a in self.get(params)['articles']]
+        params['sources'] = 'the-wall-street-journal'
+        self.wsj = [Article(a) for a in self.get(params)['articles']]
 
 
 class Article:
