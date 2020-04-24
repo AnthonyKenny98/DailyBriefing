@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-24 19:00:58
+# @Last Modified time: 2020-04-24 19:01:13
 
 import smtplib
 import ssl
