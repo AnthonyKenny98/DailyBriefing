@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 16:28:37
+# @Last Modified time: 2020-04-24 19:00:58
 
 import smtplib
 import ssl
@@ -76,4 +76,4 @@ def send_mail(data):
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
         server.login(sender_email, password)
-        # server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())
+        server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())
