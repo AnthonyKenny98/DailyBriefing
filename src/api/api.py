@@ -3,13 +3,11 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:13:04
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 15:50:54
+# @Last Modified time: 2020-04-27 08:52:49
 
 import os
 import requests
 import sys
-
-API_KEY = '/api.credentials'
 
 
 class API:
@@ -20,7 +18,8 @@ class API:
 
     def __init__(self):
         """Super Init."""
-        with open(self.dir_path() + API_KEY) as f:
+        credentials = '/{}.credentials'.format(self.__class__.__name__.lower())
+        with open(self.dir_path() + credentials) as f:
             self.api_key = f.read().rstrip()
 
     def dir_path(self):
@@ -29,4 +28,3 @@ class API:
 
     def get(self, params):
         return requests.get(self.BASE_URL, params=params).json()
-        

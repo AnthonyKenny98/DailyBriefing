@@ -3,12 +3,12 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 16:22:01
+# @Last Modified time: 2020-04-27 08:55:08
 
-from mail import send_mail
-from weather import WeatherToday
+from mail.mail import send_mail
+from api.weather import WeatherToday
+from api.news import NewsToday
 from datetime import datetime
-from news import NewsToday
 
 
 class Date():

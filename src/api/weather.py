@@ -3,9 +3,9 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 11:46:58
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-24 18:39:43
+# @Last Modified time: 2020-04-27 08:23:54
 
-from api import API
+from .api import API
 
 COORDINATES = {
     'sydney': {'lat': -33.87, 'long': 151.21},

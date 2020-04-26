@@ -8,7 +8,6 @@ install:
 # command to run tests
 script:
   - python3 -m pytest --flake8
-  - bash <(curl -s https://codecov.io/bash)
 # disable notifications
 notifications:
   email: false

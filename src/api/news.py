@@ -3,10 +3,9 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:03:22
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-24 18:52:12
+# @Last Modified time: 2020-04-27 08:53:34
 
-
-from api import API
+from .api import API
 
 
 class News(API):
@@ -54,6 +53,3 @@ class Article:
         self.description = article['description']
         self.url = article['url']
         self.img_url = article['urlToImage']
-
-if __name__ == '__main__':
-    n = NewsToday()

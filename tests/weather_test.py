@@ -3,10 +3,10 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 14:05:07
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-21 14:44:17
+# @Last Modified time: 2020-04-27 08:45:10
 
 
-from src.weather import WeatherToday
+from src.api.weather import WeatherToday
 
 
 def test_init():
