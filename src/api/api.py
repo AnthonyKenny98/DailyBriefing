@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:13:04
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-27 08:52:49
+# @Last Modified time: 2020-04-27 09:03:59
 
 import os
 import requests
@@ -18,9 +18,12 @@ class API:
 
     def __init__(self):
         """Super Init."""
-        credentials = '/{}.credentials'.format(self.__class__.__name__.lower())
-        with open(self.dir_path() + credentials) as f:
-            self.api_key = f.read().rstrip()
+        cred = self.__class__.__name__.upper()
+        try:
+            with open(self.dir_path() + '/' + cred.lower() + '.creds') as f:
+                self.api_key = f.read().rstrip()
+        except Exception:
+            self.api_key = os.environ(cred)
 
     def dir_path(self):
         path = sys.modules[self.__module__].__file__
