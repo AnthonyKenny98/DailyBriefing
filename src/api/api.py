@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:13:04
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-27 09:03:59
+# @Last Modified time: 2020-04-27 10:51:44
 
 import os
 import requests
@@ -23,7 +23,7 @@ class API:
             with open(self.dir_path() + '/' + cred.lower() + '.creds') as f:
                 self.api_key = f.read().rstrip()
         except Exception:
-            self.api_key = os.environ(cred)
+            self.api_key = os.environ[cred]
 
     def dir_path(self):
         path = sys.modules[self.__module__].__file__

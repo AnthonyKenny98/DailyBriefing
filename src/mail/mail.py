@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-24 19:01:13
+# @Last Modified time: 2020-04-27 10:51:56
 
 import smtplib
 import ssl
@@ -39,12 +39,18 @@ def render_template(template, **kwargs):
 def send_mail(data):
     """main."""
     # Get Sender Gmail Address
-    with open(GMAIL, 'r') as g:
-        sender_email = g.read()
+    try:
+        with open(GMAIL, 'r') as g:
+            sender_email = g.read()
+    except Exception:
+        sender_email = os.environ['GMAIL']
 
     # Get Gmail Password
-    with open(PASS, 'r') as p:
-        password = p.read()
+    try:
+        with open(PASS, 'r') as p:
+            password = p.read()
+    except Exception:
+        password = os.environ['GMAIL_PASSWORD']
 
     # Create MIME multipart message
     message = MIMEMultipart('alternative')
