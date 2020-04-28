@@ -3,12 +3,15 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-27 08:55:08
+# @Last Modified time: 2020-04-28 17:52:15
 
 from mail.mail import send_mail
 from api.weather import WeatherToday
 from api.news import NewsToday
 from datetime import datetime
+
+import requests
+LATIN = 'https://caecilius.herokuapp.com'
 
 
 class Date():
@@ -23,6 +26,16 @@ class Date():
         self.year = dt.strftime('%Y')
 
 
+class LatinPhrase():
+    """Latin Phrase."""
+
+    def __init__(self):
+        """Init Latin Phrase."""
+        r = requests.get(LATIN).json()
+        self.phrase = r['latin']
+        self.translation = r['english']
+
+
 class Briefing:
     """Holds the entire briefing."""
 
@@ -32,6 +45,7 @@ class Briefing:
         self.date = Date()
         self.weather = WeatherToday('canyonleigh')
         self.news = NewsToday()
+        self.latin = LatinPhrase()
 
 
 text = """\

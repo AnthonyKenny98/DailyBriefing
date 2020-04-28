@@ -1,0 +1,40 @@
+/*
+* @Author: AnthonyKenny98
+* @Date:   2020-04-28 11:35:40
+* @Last Modified by:   AnthonyKenny98
+* @Last Modified time: 2020-04-28 12:58:17
+*/
+@media only screen and (min-width:620px) {
+
+/* -------------------------------------
+  SECTION STYLES
+------------------------------------- */
+
+.col-container {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed !important;
+}
+
+/*.col-container:after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}*/
+
+.col {
+  text-align: left !important;
+  vertical-align: top !important;
+  display: table-cell !important;
+}
+
+.article {
+}
+
+h1 {
+  text-align: left !important;
+}
+h2 {
+  text-align: left !important;
+}
+}
