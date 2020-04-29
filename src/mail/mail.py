@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-28 18:01:44
+# @Last Modified time: 2020-04-30 08:36:29
 
 import smtplib
 import ssl
@@ -58,9 +58,6 @@ def send_mail(data):
     message["To"] = RECEIVER_EMAIL
     message['subject'] = data['subject']
 
-    # Create first part, plaintext email
-    part1 = MIMEText(data['text'], "plain")
-
     # Use Jinga to render template with variables
     html = render_template(dir_path + '/mail.html', briefing=data['briefing'])
     # Transform html from css to inline styling (needed for emails)
@@ -71,15 +68,14 @@ def send_mail(data):
         f.write(html)
 
     # Create second part, html
-    part2 = MIMEText(html, "html")
+    part = MIMEText(html, "html")
 
     # Add HTML/plain-text parts to MIMEMultipart message
     # The email client will try to render the last part first
-    message.attach(part1)
-    message.attach(part2)
+    message.attach(part)
 
     # Uncomment to send email
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
         server.login(sender_email, password)
-        server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())
+        # server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())

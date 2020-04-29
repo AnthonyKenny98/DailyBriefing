@@ -70,7 +70,7 @@
 
               <!-- Date Column -->
               <section class="col">
-                <p><h1>{{briefing.date.dayname}}</h1></p>
+                <h1>{{briefing.date.dayname}}</h1>
                 <p>{{briefing.date.month}} {{briefing.date.day}}, {{briefing.date.year}}</p>
               </section>
 
@@ -93,22 +93,20 @@
 
         <!-- Latin Phrase -->
           <section class="content-block">
-            <h2> Latin Phrase of the Day </h2> 
-            <p class="align-center"><b> {{briefing.latin.phrase}} </b></p>
+            <h2> Language of the Day </h2> 
+            <p><b> {{briefing.latin.phrase}} </b></p>
               <p> {{briefing.latin.translation}} </p>
           </section>
 
         <!-- News Headlines -->
           <section class="content-block">
             <h2> Today's Headlines </h2>
-
-            <!-- AFR Headlines -->
-            <h3>Australian Financial Review</h3>
               
-            {% for article in briefing.news.afr %}
+            {% for article in briefing.news.articles %}
             <section class="col-container article">
               <section class="col" >
                 <a href="{{article.url}}"><h3>{{article.title}}</h3></a>
+                <p><i>{{article.source}}
                 <p>{{article.description}}</p>
               </section>
               {% if article.img_url != None %}
@@ -132,13 +130,7 @@
       <tr>
         <td class="content-block">
           <span class="apple-link">Briefing sent at {{briefing.date.time}} </span>
-          <br><span class="apple-link">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
-          <br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.
-        </td>
-      </tr>
-      <tr>
-        <td class="content-block powered-by">
-          Powered by <a href="http://htmlemail.io">HTMLemail</a>.
+          <br><span class="apple-link">Copyright &copy; 2020 Anthony Kenny</span>
         </td>
       </tr>
     </table>

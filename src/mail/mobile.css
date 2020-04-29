@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-04-28 11:34:41
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-04-28 17:58:00
+* @Last Modified time: 2020-04-30 08:14:13
 */
 
 /* -------------------------------------
@@ -22,14 +22,18 @@ display: table;
 clear: both;
 }*/
 
-.col { 
+.col {
     box-sizing: border-box;
     display: block;
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
     text-align: center;
-    vertical-align: top;
+    vertical-align: bottom;
     padding: 5px;
+}
+.col h1 {
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .article {
@@ -44,6 +48,9 @@ clear: both;
     font-size: 20px;
     color: black;
     text-decoration: none;
+    margin-bottom: 0px;
+}
+.article i {
 }
 .article a {
     text-decoration: none;
@@ -52,51 +59,24 @@ clear: both;
 /* -------------------------------------
   TYPOGRAPHY
 ------------------------------------- */
-h1,
-h2 {
-margin: 0;
-text-decoration: underline;
-text-align: center;
-},
-h3,
-h4 {
-color: #000000;
-font-family: sans-serif;
-font-weight: 400;
-line-height: 1.4;
-margin: 0;
-margin-bottom: 30px; 
+h1 {
+  text-align: center;
 }
 
-h1 {
-font-size: 40px;
-font-weight: 300;
-text-align: left;
-text-transform: capitalize;
-text-align: center ;
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
 }
 
 p {
-margin: 0;
-},
-ul,
-ol {
-font-family: sans-serif;
-font-size: 14px;
-font-weight: normal;
-margin: 0;
-margin-bottom: 15px; 
-}
-p li,
-ul li,
-ol li {
-  list-style-position: inside;
-  margin-left: 5px; 
-}
-
-a {
-color: #3498db;
-text-decoration: underline; 
+  text-align: center;
 }
 
 /* -------------------------------------

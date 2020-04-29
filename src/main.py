@@ -3,15 +3,13 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-28 17:52:15
+# @Last Modified time: 2020-04-30 08:35:53
 
 from mail.mail import send_mail
 from api.weather import WeatherToday
 from api.news import NewsToday
+from api.language import Language
 from datetime import datetime
-
-import requests
-LATIN = 'https://caecilius.herokuapp.com'
 
 
 class Date():
@@ -24,16 +22,7 @@ class Date():
         self.day = dt.strftime('%d')
         self.month = dt.strftime('%B')
         self.year = dt.strftime('%Y')
-
-
-class LatinPhrase():
-    """Latin Phrase."""
-
-    def __init__(self):
-        """Init Latin Phrase."""
-        r = requests.get(LATIN).json()
-        self.phrase = r['latin']
-        self.translation = r['english']
+        self.time = dt.strftime('%H:%M:%S')
 
 
 class Briefing:
@@ -45,22 +34,11 @@ class Briefing:
         self.date = Date()
         self.weather = WeatherToday('canyonleigh')
         self.news = NewsToday()
-        self.latin = LatinPhrase()
-
-
-text = """\
-    Hi,
-    How are you?
-    Real Python has many great tutorials:
-    www.realpython.com"""
-
-briefing = Briefing()
+        self.latin = Language()
 
 data = {
     'subject': datetime.now().strftime("%H:%M:%S"),
-    'text': text,
-    'briefing': briefing
+    'briefing': Briefing()
 }
-
 
 send_mail(data)

@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-04-28 11:35:40
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-04-28 12:58:17
+* @Last Modified time: 2020-04-30 08:09:58
 */
 @media only screen and (min-width:620px) {
 
@@ -31,10 +31,27 @@
 .article {
 }
 
+/* -------------------------------------
+  TYPOGRAPHY
+------------------------------------- */
 h1 {
   text-align: left !important;
 }
+
 h2 {
+text-align: left !important;
+}
+
+h3 {
+text-align: left !important;
+}
+
+h4 {
   text-align: left !important;
 }
+
+p {
+  text-align: left !important;
+}
+
 }

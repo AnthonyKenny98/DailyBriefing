@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:13:04
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-27 10:51:44
+# @Last Modified time: 2020-04-30 08:33:20
 
 import os
 import requests
@@ -20,14 +20,18 @@ class API:
         """Super Init."""
         cred = self.__class__.__name__.upper()
         try:
+            # Credentials stored in local file with name of class
             with open(self.dir_path() + '/' + cred.lower() + '.creds') as f:
                 self.api_key = f.read().rstrip()
-        except Exception:
-            self.api_key = os.environ[cred]
+        except FileNotFoundError:
+            # Will set to None if no OS environment variable set
+            self.api_key = os.environ.get(cred)
 
     def dir_path(self):
+        """Return path to instance of child class."""
         path = sys.modules[self.__module__].__file__
         return os.path.dirname(os.path.realpath(path))
 
-    def get(self, params):
+    def get(self, params=None):
+        """Get request to Base URL."""
         return requests.get(self.BASE_URL, params=params).json()
