@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-30 09:47:23
+# @Last Modified time: 2020-04-30 13:57:32
 
 from mail.mail import send_mail
 from api.weather import WeatherToday
@@ -37,6 +37,7 @@ class Briefing:
         self.weather = WeatherToday('canyonleigh')
         self.news = NewsToday()
         self.languages = [Language(language) for language in LANGUAGES]
+
 
 data = {
     'subject': datetime.now().strftime("%H:%M:%S"),

@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:03:22
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-30 09:13:39
+# @Last Modified time: 2020-04-30 13:57:48
 
 from .api import API
 
@@ -30,7 +30,8 @@ class NewsToday(News):
             'language': 'en',
             'sources': 'australian-financial-review'
         }
-        self.articles = [Article(a) for a in self.get(params=params)['articles']]
+        self.articles = [
+            Article(a) for a in self.get(params=params)['articles']]
 
 
 class Article:
