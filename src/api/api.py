@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:13:04
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-30 08:33:20
+# @Last Modified time: 2020-04-30 09:00:50
 
 import os
 import requests
@@ -32,6 +32,7 @@ class API:
         path = sys.modules[self.__module__].__file__
         return os.path.dirname(os.path.realpath(path))
 
-    def get(self, params=None):
+    def get(self, endpoint=None, params=None):
         """Get request to Base URL."""
-        return requests.get(self.BASE_URL, params=params).json()
+        url = self.BASE_URL if endpoint is None else self.BASE_URL + endpoint
+        return requests.get(url, params=params).json()

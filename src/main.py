@@ -3,13 +3,15 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-30 08:35:53
+# @Last Modified time: 2020-04-30 09:47:23
 
 from mail.mail import send_mail
 from api.weather import WeatherToday
 from api.news import NewsToday
 from api.language import Language
 from datetime import datetime
+
+LANGUAGES = ['latin', 'french']
 
 
 class Date():
@@ -34,7 +36,7 @@ class Briefing:
         self.date = Date()
         self.weather = WeatherToday('canyonleigh')
         self.news = NewsToday()
-        self.latin = Language()
+        self.languages = [Language(language) for language in LANGUAGES]
 
 data = {
     'subject': datetime.now().strftime("%H:%M:%S"),

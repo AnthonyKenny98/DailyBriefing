@@ -2,7 +2,7 @@
 * @Author: AnthonyKenny98
 * @Date:   2020-04-28 11:53:05
 * @Last Modified by:   AnthonyKenny98
-* @Last Modified time: 2020-04-30 07:20:22
+* @Last Modified time: 2020-04-30 09:15:15
 */
 /* -------------------------------------
   GLOBAL RESETS
@@ -121,8 +121,11 @@ h1 {
 h2 {
     margin: 0;
     text-decoration: underline;
+    text-transform: capitalize;
 }
-h3
+h3 {
+    text-transform: capitalize;
+}
 h4 {
     color: #000000;
     font-family: sans-serif;
@@ -130,14 +133,7 @@ h4 {
     line-height: 1.4;
     margin: 0;
     margin-bottom: 30px; 
-}
-
-h1 {
-    font-size: 40px;
-    font-weight: 300;
-    text-align: left;
     text-transform: capitalize;
-    text-align: center ;
 }
 
 p {

@@ -94,8 +94,11 @@
         <!-- Latin Phrase -->
           <section class="content-block">
             <h2> Language of the Day </h2> 
-            <p><b> {{briefing.latin.phrase}} </b></p>
-              <p> {{briefing.latin.translation}} </p>
+            {% for language in briefing.languages %}
+            <h3> {{language.language}}</h3>
+            <p><b><i> {{language.phrase}} </i></b></p>
+              <p> {{language.translation}} </p>
+            {% endfor %}
           </section>
 
         <!-- News Headlines -->
@@ -106,7 +109,7 @@
             <section class="col-container article">
               <section class="col" >
                 <a href="{{article.url}}"><h3>{{article.title}}</h3></a>
-                <p><i>{{article.source}}
+                <p><i>{{article.source}} </i></p>
                 <p>{{article.description}}</p>
               </section>
               {% if article.img_url != None %}

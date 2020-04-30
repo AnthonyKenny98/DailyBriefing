@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 11:46:58
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-27 08:23:54
+# @Last Modified time: 2020-04-30 09:13:27
 
 from .api import API
 
@@ -40,7 +40,7 @@ class WeatherToday(Weather):
             'appid': self.api_key,
             'units': UNITS
         }
-        r = self.get(params)
+        r = self.get(params=params)
         today = r['daily'][0]
         self.temp = int(r['current']['temp'])
         self.min_temp = today['temp']['min']
