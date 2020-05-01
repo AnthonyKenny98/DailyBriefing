@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-30 15:00:08
+# @Last Modified time: 2020-05-01 18:31:07
 
 from mail.mail import send_mail
 from api.weather import WeatherToday
@@ -40,6 +40,7 @@ class User:
         self.last = sql_user['last']
         self.location = sql_user['location']
         self.languages = ast.literal_eval(sql_user['languages'])
+        self.email = sql_user['email']
 
 
 class Briefing:

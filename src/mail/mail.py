@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-30 15:02:38
+# @Last Modified time: 2020-05-01 18:33:13
 
 import smtplib
 import ssl
@@ -19,8 +19,6 @@ PORT = 465
 GMAIL = dir_path + '/gmail.credentials'
 PASS = dir_path + '/password.credentials'
 SMTP_SERVER = "smtp.gmail.com"
-
-RECEIVER_EMAIL = "anthonyjwkenny@gmail.com"
 
 
 def render_template(template, **kwargs):
@@ -55,7 +53,7 @@ def send_mail(data):
     # Create MIME multipart message
     message = MIMEMultipart('alternative')
     message["From"] = sender_email
-    message["To"] = RECEIVER_EMAIL
+    message["To"] = data['briefing'].user.email
     message['subject'] = data['subject']
 
     # Use Jinga to render template with variables
@@ -78,4 +76,6 @@ def send_mail(data):
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
         server.login(sender_email, password)
-        server.sendmail(sender_email, RECEIVER_EMAIL, message.as_string())
+        print(data['briefing'].user.email)
+        # server.sendmail(
+        #     sender_email, data['briefing'].user.email, message.as_string())
