@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:13:04
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-05-05 19:49:29
+# @Last Modified time: 2020-05-05 19:52:22
 
 import os
 import requests
@@ -25,7 +25,12 @@ class API:
                 self.api_key = f.read().rstrip()
         except Exception:
             # Will set to None if no OS environment variable set
-            self.api_key = os.environ.get(cred)
+            print("DOING THIS")
+            try:
+                self.api_key = os.environ[cred]
+            except Exception:
+                self.api_key = None
+            print(self.api_key)
 
     def dir_path(self):
         """Return path to instance of child class."""
