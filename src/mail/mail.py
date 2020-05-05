@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-05-05 19:38:56
+# @Last Modified time: 2020-05-05 20:12:41
 
 import smtplib
 import ssl
@@ -74,7 +74,8 @@ def send_mail(data):
 
     # Uncomment to send email
     context = ssl.create_default_context()
-    with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
-        server.login(sender_email, password)
-        # server.sendmail(
-            # sender_email, data['briefing'].user.email, message.as_string())
+    if os.environ.get('HEROKU') is not None:
+        with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(
+                sender_email, data['briefing'].user.email, message.as_string())
