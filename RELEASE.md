@@ -3,7 +3,7 @@
 0.0.0
 
 ## Release Semantics
-<Breaking Release>.<Feature Release>.<Patch Release>
+\<Breaking Release\>.\<Feature Release\>.\<Patch Release\>
 
 ## Changelog
 
