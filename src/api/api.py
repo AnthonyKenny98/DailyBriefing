@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-21 15:13:04
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-30 09:00:50
+# @Last Modified time: 2020-05-05 19:49:29
 
 import os
 import requests
@@ -23,7 +23,7 @@ class API:
             # Credentials stored in local file with name of class
             with open(self.dir_path() + '/' + cred.lower() + '.creds') as f:
                 self.api_key = f.read().rstrip()
-        except FileNotFoundError:
+        except Exception:
             # Will set to None if no OS environment variable set
             self.api_key = os.environ.get(cred)
 
