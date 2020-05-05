@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-27 09:07:04
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-04-27 09:34:23
+# @Last Modified time: 2020-05-05 20:03:20
 
 from os.path import dirname, realpath
 from os import walk, system
@@ -17,4 +17,4 @@ for root, _, files in walk(repo):
         if file.endswith('.creds'):
             with open(root + '/' + file) as f:
                 cred = f.read()
-            system(OS_COMMAND.format(repo, file.split('.')[0], cred))
+            system(OS_COMMAND.format(repo, file.split('.')[0].upper(), cred))
