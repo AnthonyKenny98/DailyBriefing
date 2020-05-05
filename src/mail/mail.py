@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-16 12:13:34
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-05-01 18:34:34
+# @Last Modified time: 2020-05-05 19:38:56
 
 import smtplib
 import ssl
@@ -16,8 +16,8 @@ from premailer import transform
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 PORT = 465
-GMAIL = dir_path + '/gmail.credentials'
-PASS = dir_path + '/password.credentials'
+GMAIL = dir_path + '/gmail.creds'
+PASS = dir_path + '/password.creds'
 SMTP_SERVER = "smtp.gmail.com"
 
 
@@ -76,5 +76,5 @@ def send_mail(data):
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL(SMTP_SERVER, PORT, context=context) as server:
         server.login(sender_email, password)
-        server.sendmail(
-            sender_email, data['briefing'].user.email, message.as_string())
+        # server.sendmail(
+            # sender_email, data['briefing'].user.email, message.as_string())
