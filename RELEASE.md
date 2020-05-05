@@ -1,8 +1,8 @@
-# Version
+# RELEASE
 
 0.0.0
 
-## Versioning Semantics
+## Release Semantics
 <Breaking Release>.<Feature Release>.<Patch Release>
 
 ## Changelog
