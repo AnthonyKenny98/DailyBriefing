@@ -3,16 +3,18 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-05-01 18:31:07
+# @Last Modified time: 2020-05-06 18:24:35
 
 from mail.mail import send_mail
 from api.weather import WeatherToday
 from api.news import NewsToday
 from api.language import Language
 from datetime import datetime
+import pytz
 
 import sqlite3
 import ast
+
 
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -23,7 +25,7 @@ class Date:
 
     def __init__(self):
         """Init date."""
-        dt = datetime.now()
+        dt = datetime.now(pytz.timezone('Australia/Sydney'))
         self.dayname = dt.strftime('%A')
         self.day = dt.strftime('%d')
         self.month = dt.strftime('%B')
