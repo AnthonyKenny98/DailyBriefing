@@ -3,16 +3,18 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-05-01 18:31:07
+# @Last Modified time: 2020-05-06 18:32:08
 
 from mail.mail import send_mail
 from api.weather import WeatherToday
 from api.news import NewsToday
 from api.language import Language
 from datetime import datetime
+import pytz
 
 import sqlite3
 import ast
+
 
 import os
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -21,9 +23,9 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 class Date:
     """Date."""
 
-    def __init__(self):
+    def __init__(self, timezone):
         """Init date."""
-        dt = datetime.now()
+        dt = datetime.now(pytz.timezone(timezone))
         self.dayname = dt.strftime('%A')
         self.day = dt.strftime('%d')
         self.month = dt.strftime('%B')
@@ -41,6 +43,7 @@ class User:
         self.location = sql_user['location']
         self.languages = ast.literal_eval(sql_user['languages'])
         self.email = sql_user['email']
+        self.timezone = sql_user['pytimezone']
 
 
 class Briefing:
@@ -49,7 +52,7 @@ class Briefing:
     def __init__(self, user):
         """Initialize briefing."""
         self.user = user
-        self.date = Date()
+        self.date = Date(user.timezone)
         self.weather = WeatherToday(user.location)
         self.news = NewsToday()
         self.languages = [Language(language) for language in user.languages]
