@@ -3,7 +3,7 @@
 # @Author: AnthonyKenny98
 # @Date:   2020-04-19 21:10:05
 # @Last Modified by:   AnthonyKenny98
-# @Last Modified time: 2020-05-06 18:32:08
+# @Last Modified time: 2020-09-12 09:01:03
 
 from mail.mail import send_mail
 from api.weather import WeatherToday
@@ -75,7 +75,8 @@ users = c.execute('''SELECT * FROM users''').fetchall()
 for user in users:
     print('Preparing Briefing for {}'.format(user['first']))
     data = {
-        'subject': datetime.now().strftime("%H:%M:%S"),
+        'subject': "Your Daily Briefing, {}".format(
+            datetime.now().strftime("%A, %d %B")),
         'briefing': Briefing(User(user))
     }
     send_mail(data)
